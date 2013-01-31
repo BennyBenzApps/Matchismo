@@ -211,11 +211,19 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Score: 0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="R0q-fV-dh8">
+                                <rect key="frame" x="210" y="419" width="90" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <connections>
                         <outlet property="flipsLabel" destination="CtX-h7-pP7" id="PAr-pT-09C"/>
+                        <outlet property="scoreLabel" destination="R0q-fV-dh8" id="qJT-2X-Q85"/>
                         <outletCollection property="cardButtons" destination="iRK-W6-Huk" id="9rZ-xr-HYd"/>
                         <outletCollection property="cardButtons" destination="SsY-n7-5e7" id="oR9-dY-kQM"/>
                         <outletCollection property="cardButtons" destination="bku-fN-60K" id="LDK-rw-tcd"/>
@@ -232,6 +240,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-70" y="141"/>
         </scene>
     </scenes>
     <classes>
@@ -240,6 +249,7 @@
             <relationships>
                 <relationship kind="action" name="flipCard:" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="flipsLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="scoreLabel" candidateClass="UILabel"/>
                 <relationship kind="outletCollection" name="cardButtons" candidateClass="UIButton"/>
             </relationships>
         </class>
