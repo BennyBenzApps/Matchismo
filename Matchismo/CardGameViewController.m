@@ -31,9 +31,13 @@
     self.game = nil;
     self.flipCount = 0;
     [self updateUI];
+    self.gameChooser.enabled = YES;
 }
-- (IBAction)gameChanged:(id)sender {
+
+- (IBAction)gameChanged:(UISegmentedControl *)sender {
+
 }
+
 
 - (void)setCardButtons:(NSArray *)cardButtons{
     _cardButtons = cardButtons;
@@ -59,7 +63,9 @@
 }
 
 - (IBAction)flipCard:(UIButton *)sender {
-    
+    if (self.gameChooser.enabled){
+        self.gameChooser.enabled = NO;
+    }
     [self.game flipCardAtIndex:[self.cardButtons indexOfObject:sender]];
     self.flipCount++;
     [self updateUI];
