@@ -17,6 +17,7 @@
 @property (strong, nonatomic) CardMatchingGame *game;
 @property (weak, nonatomic) IBOutlet UILabel *scoreLabel;
 @property (weak, nonatomic) IBOutlet UILabel *resultsLabel;
+@property (weak, nonatomic) IBOutlet UISegmentedControl *gameChooser;
 @end
 
 @implementation CardGameViewController
@@ -25,6 +26,13 @@
     if (!_game) _game = [[CardMatchingGame alloc] initWithCardCount:[self.cardButtons count]
                                                           usingDeck:[[PlayingCardDeck alloc] init]];
     return _game;
+}
+- (IBAction)newGame:(id)sender {
+    self.game = nil;
+    self.flipCount = 0;
+    [self updateUI];
+}
+- (IBAction)gameChanged:(id)sender {
 }
 
 - (void)setCardButtons:(NSArray *)cardButtons{
@@ -42,6 +50,7 @@
         cardButton.alpha = (card.isUnplayable ? 0.3 : 1.0);
     }
     self.scoreLabel.text = [NSString stringWithFormat:@"Score: %d", self.game.score];
+    self.resultsLabel.text = self.game.matchResult;
 }
 
 - (void)setFlipCount:(int)flipCount {

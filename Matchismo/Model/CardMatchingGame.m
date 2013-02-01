@@ -32,16 +32,22 @@
             for (Card *otherCard in self.cards){
                 if (otherCard.isFaceUp && !otherCard.isUnplayable){
                     int matchScore = [card match:@[otherCard]];
+                    int points = 0;
                     if (matchScore){
                         card.unplayable = YES;
                         otherCard.unplayable = YES;
-                        self.score += matchScore * MATCH_BONUS;
+                        points = matchScore * MATCH_BONUS;
+                        self.score += points;
+                        self.matchResult = [NSString stringWithFormat:@"Matched %@ & %@ for %d points", [card contents], [otherCard contents], points];
                     } else {
                         otherCard.faceUp = NO;
-                        self.score -= MISMATCH_PENALTY;
+                        points = MISMATCH_PENALTY;
+                        self.score -= points;
+                        self.matchResult = [NSString stringWithFormat:@"%@ & %@ don't match! %d point penalty!", [card contents], [otherCard contents], points];
                     }
                     break;
                 }
+                self.matchResult = [NSString stringWithFormat:@"Flipped up %@",card.contents];
             }
             self.score -= FLIP_COST;
         }
