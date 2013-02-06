@@ -27,15 +27,20 @@
                                                           usingDeck:[[PlayingCardDeck alloc] init]];
     return _game;
 }
+
 - (IBAction)newGame:(id)sender {
     self.game = nil;
     self.flipCount = 0;
+    self.game.matchResult = [NSString stringWithFormat:@"%d card game. Pick a card!", self.gameChooser.selectedSegmentIndex+2];
     [self updateUI];
     self.gameChooser.enabled = YES;
+    self.game.gameMode = [self.gameChooser selectedSegmentIndex];
 }
 
 - (IBAction)gameChanged:(UISegmentedControl *)sender {
-
+    self.game.gameMode = sender.selectedSegmentIndex;
+    self.game.matchResult = [NSString stringWithFormat:@"%d card game. Pick a card!", sender.selectedSegmentIndex+2];
+    [self updateUI];
 }
 
 
@@ -47,7 +52,8 @@
 - (void)updateUI {
     for (UIButton *cardButton in self.cardButtons) {
         Card *card = [self.game cardAtIndex:[self.cardButtons indexOfObject:cardButton]];
-        [cardButton setTitle:card.contents forState:UIControlStateSelected];
+        [cardButton setImage:card.isFaceUp ? nil : [UIImage imageNamed:@"playing-card-back.jpg"] forState:UIControlStateNormal];
+                [cardButton setTitle:card.contents forState:UIControlStateSelected];
         [cardButton setTitle:card.contents forState:UIControlStateSelected|UIControlStateDisabled];
         cardButton.selected = card.isFaceUp;
         cardButton.enabled = !card.isUnplayable;

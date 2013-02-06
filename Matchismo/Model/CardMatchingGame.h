@@ -22,5 +22,6 @@
 
 @property (readonly, nonatomic) int score;
 @property (strong, nonatomic) NSString *matchResult;
+@property (nonatomic) int gameMode;
 
 @end
