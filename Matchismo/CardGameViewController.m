@@ -15,37 +15,63 @@
 @property (nonatomic) int flipCount;
 @property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *cardButtons;
 @property (strong, nonatomic) CardMatchingGame *game;
+@property (strong, nonatomic) NSMutableArray *actionsHistory;
 @property (weak, nonatomic) IBOutlet UILabel *scoreLabel;
 @property (weak, nonatomic) IBOutlet UILabel *resultsLabel;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *gameChooser;
+@property (weak, nonatomic) IBOutlet UISlider *historySlider;
 @end
 
 @implementation CardGameViewController
 
 - (CardMatchingGame *)game {
-    if (!_game) _game = [[CardMatchingGame alloc] initWithCardCount:[self.cardButtons count]
+    if (!_game) {
+        _game = [[CardMatchingGame alloc] initWithCardCount:[self.cardButtons count]
                                                           usingDeck:[[PlayingCardDeck alloc] init]];
+    }
     return _game;
+}
+
+- (IBAction)scrollHistory:(UISlider *)sender {
+    sender.alpha = (sender.value == sender.maximumValue) ? 1.0 : 0.5;
+    self.resultsLabel.text = [self.actionsHistory objectAtIndex:floor(sender.value)];
+}
+
+- (NSMutableArray *) actionsHistory
+{
+    if (!_actionsHistory) _actionsHistory = [[NSMutableArray alloc] init];
+    return _actionsHistory;
+}
+
+- (void) updateLastHistoryAction {
+    [self.actionsHistory addObject:self.game.matchResult];
+    self.historySlider.maximumValue = self.actionsHistory.count-1;
+    [self.historySlider setValue: self.historySlider.maximumValue animated:YES];
+    self.historySlider.alpha = 1.0;
 }
 
 - (IBAction)newGame:(id)sender {
     self.game = nil;
+    self.historySlider.maximumValue = 0;
+    [self.historySlider setValue:0];
+    self.historySlider.enabled = NO;
+    self.actionsHistory = nil;
     self.flipCount = 0;
     self.game.matchResult = [NSString stringWithFormat:@"%d card game. Pick a card!", self.gameChooser.selectedSegmentIndex+2];
+    [self updateLastHistoryAction];
     [self updateUI];
     self.gameChooser.enabled = YES;
     self.game.gameMode = [self.gameChooser selectedSegmentIndex];
 }
 
 - (IBAction)gameChanged:(UISegmentedControl *)sender {
-    self.game.gameMode = sender.selectedSegmentIndex;
-    self.game.matchResult = [NSString stringWithFormat:@"%d card game. Pick a card!", sender.selectedSegmentIndex+2];
-    [self updateUI];
+    [self newGame:sender];
 }
 
 
 - (void)setCardButtons:(NSArray *)cardButtons{
     _cardButtons = cardButtons;
+    [self.actionsHistory addObject:self.game.matchResult];
     [self updateUI];
 }
 
@@ -72,8 +98,12 @@
     if (self.gameChooser.enabled){
         self.gameChooser.enabled = NO;
     }
+    if (! self.historySlider.enabled){
+        self.historySlider.enabled = YES;
+    }
     [self.game flipCardAtIndex:[self.cardButtons indexOfObject:sender]];
     self.flipCount++;
+    [self updateLastHistoryAction];
     [self updateUI];
 }
 
