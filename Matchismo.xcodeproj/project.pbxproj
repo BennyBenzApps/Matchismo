@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		B555DDFB16C301E10008CF95 /* playing-card-back.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B555DDFA16C301E10008CF95 /* playing-card-back.jpg */; };
 		B5A191EB16B9D118006D2E8C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5A191EA16B9D118006D2E8C /* UIKit.framework */; };
 		B5A191ED16B9D118006D2E8C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5A191EC16B9D118006D2E8C /* Foundation.framework */; };
 		B5A191EF16B9D118006D2E8C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5A191EE16B9D118006D2E8C /* CoreGraphics.framework */; };
@@ -24,10 +23,10 @@
 		B5A1921616B9D7DE006D2E8C /* PlayingCard.m in Sources */ = {isa = PBXBuildFile; fileRef = B5A1921516B9D7DE006D2E8C /* PlayingCard.m */; };
 		B5A1921916B9D804006D2E8C /* PlayingCardDeck.m in Sources */ = {isa = PBXBuildFile; fileRef = B5A1921816B9D804006D2E8C /* PlayingCardDeck.m */; };
 		B5A1921C16BB128E006D2E8C /* CardMatchingGame.m in Sources */ = {isa = PBXBuildFile; fileRef = B5A1921B16BB128E006D2E8C /* CardMatchingGame.m */; };
+		B5C4F45F16C4480F00793368 /* cardback.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B5C4F45E16C4480F00793368 /* cardback.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		B555DDFA16C301E10008CF95 /* playing-card-back.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "playing-card-back.jpg"; path = "../../../Downloads/playing-card-back.jpg"; sourceTree = "<group>"; };
 		B5A191E716B9D118006D2E8C /* Matchismo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Matchismo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5A191EA16B9D118006D2E8C /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		B5A191EC16B9D118006D2E8C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -54,6 +53,7 @@
 		B5A1921816B9D804006D2E8C /* PlayingCardDeck.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PlayingCardDeck.m; path = Model/PlayingCardDeck.m; sourceTree = "<group>"; };
 		B5A1921A16BB128E006D2E8C /* CardMatchingGame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CardMatchingGame.h; path = Model/CardMatchingGame.h; sourceTree = "<group>"; };
 		B5A1921B16BB128E006D2E8C /* CardMatchingGame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CardMatchingGame.m; path = Model/CardMatchingGame.m; sourceTree = "<group>"; };
+		B5C4F45E16C4480F00793368 /* cardback.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = cardback.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,7 +104,7 @@
 				B5A1921316B9D7C6006D2E8C /* Model */,
 				B5A1920516B9D118006D2E8C /* CardGameViewController.h */,
 				B5A1920616B9D118006D2E8C /* CardGameViewController.m */,
-				B555DDFA16C301E10008CF95 /* playing-card-back.jpg */,
+				B5C4F45E16C4480F00793368 /* cardback.jpg */,
 				B5A191F116B9D118006D2E8C /* Supporting Files */,
 			);
 			path = Matchismo;
@@ -200,7 +200,7 @@
 				B5A191FF16B9D118006D2E8C /* Default@2x.png in Resources */,
 				B5A1920116B9D118006D2E8C /* Default-568h@2x.png in Resources */,
 				B5A1920416B9D118006D2E8C /* MainStoryboard.storyboard in Resources */,
-				B555DDFB16C301E10008CF95 /* playing-card-back.jpg in Resources */,
+				B5C4F45F16C4480F00793368 /* cardback.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
