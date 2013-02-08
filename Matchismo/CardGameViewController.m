@@ -79,7 +79,13 @@
     for (UIButton *cardButton in self.cardButtons) {
         Card *card = [self.game cardAtIndex:[self.cardButtons indexOfObject:cardButton]];
         [cardButton setImage:card.isFaceUp ? nil : [UIImage imageNamed:@"cardback.jpg"] forState:UIControlStateNormal];
-        [cardButton setImageEdgeInsets:UIEdgeInsetsMake(1, 1, 1, 1)];
+        [cardButton setBackgroundImage:!card.isFaceUp ? nil : [UIImage
+                            imageNamed:@"cardfront.jpg"]
+                              forState:UIControlStateSelected];
+        [cardButton setBackgroundImage:!card.isFaceUp ? nil : [UIImage
+                            imageNamed:@"cardfront.jpg"]
+                              forState:UIControlStateSelected|UIControlStateDisabled];
+        //[cardButton setImageEdgeInsets:UIEdgeInsetsMake(1, 2, 2, 2)];
         [cardButton setTitle:card.contents forState:UIControlStateSelected];
         [cardButton setTitle:card.contents forState:UIControlStateSelected|UIControlStateDisabled];
         cardButton.selected = card.isFaceUp;
