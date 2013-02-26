@@ -326,7 +326,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Game" id="fG8-1I-Qej"/>
+                    <tabBarItem key="tabBarItem" title="Game" image="gameicon.png" id="fG8-1I-Qej"/>
                     <connections>
                         <outlet property="flipsLabel" destination="CtX-h7-pP7" id="PAr-pT-09C"/>
                         <outlet property="gameChooser" destination="ayQ-Dg-kQt" id="uHc-oL-bQm"/>
@@ -359,7 +359,7 @@
         <scene sceneID="bqv-IV-sve">
             <objects>
                 <tabBarController definesPresentationContext="YES" id="vDC-Il-V3l" sceneMemberID="viewController">
-                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <nil key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="F1r-zW-GUC">
                         <rect key="frame" x="129" y="330" width="163" height="49"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
@@ -428,7 +428,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Score" id="IZL-TZ-YS1"/>
+                    <tabBarItem key="tabBarItem" title="Score" image="scoreicon.png" id="IZL-TZ-YS1"/>
                     <connections>
                         <outlet property="display" destination="4c8-s9-F7r" id="Bvj-68-ghh"/>
                     </connections>
@@ -440,6 +440,8 @@
     </scenes>
     <resources>
         <image name="cardback.jpg" width="64" height="80"/>
+        <image name="gameicon.png" width="32" height="32"/>
+        <image name="scoreicon.png" width="32" height="32"/>
     </resources>
     <classes>
         <class className="CardGameViewController" superclassName="UIViewController">

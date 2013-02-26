@@ -29,6 +29,8 @@
 		B5CAFA9B16C4996A00345E43 /* cardfront.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B5CAFA9A16C4996A00345E43 /* cardfront.jpg */; };
 		B5CAFAA116C4A44300345E43 /* appicon_retina.png in Resources */ = {isa = PBXBuildFile; fileRef = B5CAFAA016C4A44300345E43 /* appicon_retina.png */; };
 		B5CAFAA316C4A45A00345E43 /* appicon.png in Resources */ = {isa = PBXBuildFile; fileRef = B5CAFAA216C4A45A00345E43 /* appicon.png */; };
+		B5D1A0CD16DD31E5006BFBF1 /* gameicon.png in Resources */ = {isa = PBXBuildFile; fileRef = B5D1A0CC16DD31E5006BFBF1 /* gameicon.png */; };
+		B5D1A0CF16DD330E006BFBF1 /* scoreicon.png in Resources */ = {isa = PBXBuildFile; fileRef = B5D1A0CE16DD330E006BFBF1 /* scoreicon.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -66,6 +68,8 @@
 		B5CAFA9A16C4996A00345E43 /* cardfront.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = cardfront.jpg; sourceTree = "<group>"; };
 		B5CAFAA016C4A44300345E43 /* appicon_retina.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = appicon_retina.png; path = ../appicon_retina.png; sourceTree = "<group>"; };
 		B5CAFAA216C4A45A00345E43 /* appicon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = appicon.png; path = ../appicon.png; sourceTree = "<group>"; };
+		B5D1A0CC16DD31E5006BFBF1 /* gameicon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gameicon.png; sourceTree = "<group>"; };
+		B5D1A0CE16DD330E006BFBF1 /* scoreicon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = scoreicon.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -162,6 +166,8 @@
 		B5CAFAA416C4A46200345E43 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				B5D1A0CE16DD330E006BFBF1 /* scoreicon.png */,
+				B5D1A0CC16DD31E5006BFBF1 /* gameicon.png */,
 				B5CAFAA216C4A45A00345E43 /* appicon.png */,
 				B5CAFAA016C4A44300345E43 /* appicon_retina.png */,
 				B5C4F45E16C4480F00793368 /* cardback.jpg */,
@@ -231,6 +237,8 @@
 				B5CAFA9B16C4996A00345E43 /* cardfront.jpg in Resources */,
 				B5CAFAA116C4A44300345E43 /* appicon_retina.png in Resources */,
 				B5CAFAA316C4A45A00345E43 /* appicon.png in Resources */,
+				B5D1A0CD16DD31E5006BFBF1 /* gameicon.png in Resources */,
+				B5D1A0CF16DD330E006BFBF1 /* scoreicon.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
