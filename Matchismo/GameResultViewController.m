@@ -24,6 +24,10 @@
     }
     self.display.text = displayText;
 }
+- (IBAction)resetScores {
+    [GameResult resetScores];
+    [self updateUI];
+}
 
 - (void)viewWillAppear:(BOOL)animated
 {
