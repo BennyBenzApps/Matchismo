@@ -14,7 +14,8 @@
 
 // designated initializer
 - (id)initWithCardCount:(NSUInteger)count
-              usingDeck:(Deck *)deck;
+              usingDeck:(Deck *)deck
+          usingGameMode:(NSInteger)gameMode;
 
 - (void)flipCardAtIndex:(NSUInteger)index;
 
@@ -22,6 +23,6 @@
 
 @property (readonly, nonatomic) int score;
 @property (strong, nonatomic) NSString *matchResult;
-@property (nonatomic) int gameMode;
+@property (nonatomic) NSInteger gameMode;
 
 @end

@@ -35,7 +35,8 @@
 - (CardMatchingGame *)game {
     if (!_game) {
         _game = [[CardMatchingGame alloc] initWithCardCount:[self.cardButtons count]
-                                                          usingDeck:[[PlayingCardDeck alloc] init]];
+                                                   usingDeck:[[PlayingCardDeck alloc] init]
+                                               usingGameMode:[self.gameChooser selectedSegmentIndex]];
     }
     return _game;
 }
@@ -58,7 +59,7 @@
     self.historySlider.alpha = 1.0;
 }
 
-- (IBAction)newGame:(id)sender {
+- (IBAction)newGame {
     self.game = nil;
     self.gameResult = nil;
     self.historySlider.maximumValue = 0;
@@ -73,8 +74,8 @@
     self.game.gameMode = [self.gameChooser selectedSegmentIndex];
 }
 
-- (IBAction)gameChanged:(UISegmentedControl *)sender {
-    [self newGame:sender];
+- (IBAction)gameChanged {
+    [self newGame];
 }
 
 
